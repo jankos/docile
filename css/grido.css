@@ -1,0 +1,130 @@
+/* =============================================================================
+    Grid
+============================================================================= */
+.grid {
+    width: 960px;
+    margin: 0 auto;
+    clear: both;
+    overflow: auto;
+}
+
+.row {
+    clear: both;
+    overflow: auto;
+}
+
+.column {
+    margin: 5px;
+    overflow: auto;
+    float: left;
+}
+
+.cell {
+    padding: 5px;
+}
+
+.slim .column {
+    margin: 0;
+}
+
+.slim .cell {
+    padding: 0;
+}
+
+.col-abcdef {width: 950px;}
+.col-abcd, .col-cdef {width: 630px;}
+.col-abc, .col-def {width: 470px;}
+.col-ab, .col-cd, .col-ef {width: 310px;}
+
+.slim .col-abcdef {width: 960px;}
+.slim .col-abcd, .slim .col-cdef {width: 640px;}
+.slim .col-abc, .slim .col-def {width: 480px;}
+.slim .col-ab, .slim .col-cd, .slim .col-ef {width: 320px;}
+
+/* =============================================================================
+    Media Queries
+============================================================================= */
+/* -----------------------------------------------------------------------------
+    xsmall
+----------------------------------------------------------------------------- */
+@media all and (min-width: 0px) and (max-width: 479px) {
+    .grid,
+    .row {
+        width: 320px;
+    }
+    
+    .col-abcdef,
+    .col-abcd, .col-cdef,
+    .col-abc, .col-def,
+    .col-ab, .col-cd, .col-ef {
+        width: 310px;
+    }
+    
+    .slim .col-abcdef,
+    .slim .col-abcd, .slim .col-cdef,
+    .slim .col-abc, .slim .col-def,
+    .slim .col-ab, .slim .col-cd, .slim .col-ef {
+        width: 320px;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+    small
+----------------------------------------------------------------------------- */
+@media all and (min-width: 480px) and (max-width: 639px) {
+    .grid,
+    .row {
+        width: 480px;
+    }
+    
+    .col-abcdef,
+    .col-abcd, .col-cdef,
+    .col-abc, .col-def,
+    .col-ab, .col-cd, .col-ef {
+        width: 470px;
+    }
+    
+    .slim .col-abcdef,
+    .slim .col-abcd, .slim .col-cdef,
+    .slim .col-abc, .slim .col-def,
+    .slim .col-ab, .slim .col-cd, .slim .col-ef {
+        width: 480px;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+    medium
+----------------------------------------------------------------------------- */
+@media all and (min-width: 640px) and (max-width: 959px) {
+        .grid,
+    .row {
+        width: 640px;
+    }
+
+    .col-abcdef {
+        width: 630px;
+    }
+    
+    .slim .col-abcdef {
+        width: 640px;
+    }
+
+    .col-abcd, .col-cdef,
+    .col-abc, .col-def,
+    .col-ab, .col-cd, .col-ef {
+        width: 310px;
+    }
+    
+    .slim .col-abcd, .slim .col-cdef,
+    .slim .col-abc, .slim .col-def,
+    .slim .col-ab, .slim .col-cd, .slim .col-ef {
+        width: 320px;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+        large
+----------------------------------------------------------------------------- */
+@media all and (min-width: 960px) {
+    
+}
