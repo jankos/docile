@@ -16,16 +16,16 @@
 </head>
 <body <?php body_class(); ?>>
     <div class="grid">
-        <div class="row slim">
-            <div class="column col-abcdef">
+        <div class="row row-abcdef">
+            <div class="col col-abcdef">
                 <div class="cell" id="header">
                     <h1><?php bloginfo( 'name' ); ?></h1>
                     <p><?php bloginfo( 'description' ); ?></p>
                 </div>
             </div>
         </div>
-        <div class="row slim">
-            <div class="column col-abcdef">
+        <div class="row row-abcdef">
+            <div class="col col-abcdef">
                 <div class="cell" id="menu">
                     <?php wp_nav_menu(); ?>
                 </div>
