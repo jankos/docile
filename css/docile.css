@@ -55,6 +55,7 @@ a {
 #header {
     background: #666;
     color: #eee;
+    margin: 0;
 }
 
 #header h1 {

@@ -2,45 +2,104 @@
     Grid
 ============================================================================= */
 .grid {
-    width: 960px;
+    width: 990px;
     margin: 0 auto;
     clear: both;
     overflow: auto;
 }
-
+/* -----------------------------------------------------------------------------
+    rows
+----------------------------------------------------------------------------- */
 .row {
     clear: both;
     overflow: auto;
 }
 
-.column {
-    margin: 5px;
+.row-abcdef {}
+.row-abc-def {}
+.row-ab-cdef {}
+.row-abcd-ef {}
+.row-a-bcdef {}
+.row-abcde-f {}
+.row-ab-cd-ef {}
+.row-a-b-cdef {}
+.row-a-bcde-f {}
+.row-abcd-e-f {}
+.row-ab-cde-f {}
+.row-abc-de-f {}
+.row-ab-c-def {}
+.row-a-bc-def {}
+.row-ab-c-d-ef {}
+.row-abc-d-e-f {}
+.row-a-bcd-e-f {}
+.row-a-b-cde-f {}
+.row-a-b-c-def {}
+.row-a-bc-d-ef {}
+.row-a-b-cd-ef {}
+.row-ab-c-de-f {}
+.row-ab-cd-e-f {}
+.row-a-bc-de-f {}
+.row-ab-c-d-e-f {}
+.row-a-bc-d-e-f {}
+.row-a-b-cd-e-f {}
+.row-a-b-c-de-f {}
+.row-a-b-c-d-ef {}
+.row-a-b-c-d-e-f {}
+/* -----------------------------------------------------------------------------
+    cols
+----------------------------------------------------------------------------- */
+.col {
+    margin: 0;
+    padding: 0;
     overflow: auto;
     float: left;
 }
 
+.col-abcdef {
+    width: 990px;
+}
+
+.col-abcde,
+.col-bcdef {
+    width: 825px;
+}
+
+.col-abcd,
+.col-bcde,
+.col-cdef {
+    width: 660px;
+}
+
+.col-abc,
+.col-bcd,
+.col-cde,
+.col-def {
+    width: 495px;
+}
+
+.col-ab,
+.col-bc,
+.col-cd,
+.col-de,
+.col-ef {
+    width: 330px;
+}
+
+.col-a,
+.col-b,
+.col-c,
+.col-d,
+.col-e,
+.col-f {
+    width: 165px;
+}
+/* -----------------------------------------------------------------------------
+    cells
+----------------------------------------------------------------------------- */
 .cell {
-    padding: 5px;
-}
-
-.slim .column {
-    margin: 0;
-}
-
-.slim .cell {
     padding: 0;
+    margin: 5px;
 }
-
-.col-abcdef {width: 950px;}
-.col-abcd, .col-cdef {width: 630px;}
-.col-abc, .col-def {width: 470px;}
-.col-ab, .col-cd, .col-ef {width: 310px;}
-
-.slim .col-abcdef {width: 960px;}
-.slim .col-abcd, .slim .col-cdef {width: 640px;}
-.slim .col-abc, .slim .col-def {width: 480px;}
-.slim .col-ab, .slim .col-cd, .slim .col-ef {width: 320px;}
-
 /* =============================================================================
     Media Queries
 ============================================================================= */
@@ -54,20 +113,29 @@
     }
     
     .col-abcdef,
-    .col-abcd, .col-cdef,
-    .col-abc, .col-def,
-    .col-ab, .col-cd, .col-ef {
-        width: 310px;
-    }
-    
-    .slim .col-abcdef,
-    .slim .col-abcd, .slim .col-cdef,
-    .slim .col-abc, .slim .col-def,
-    .slim .col-ab, .slim .col-cd, .slim .col-ef {
+    .col-abcde,
+    .col-bcdef,
+    .col-abcd,
+    .col-bcde,
+    .col-cdef,
+    .col-abc,
+    .col-bcd,
+    .col-cde,
+    .col-def,
+    .col-ab,
+    .col-bc,
+    .col-cd,
+    .col-de,
+    .col-ef,
+    .col-a,
+    .col-b,
+    .col-c,
+    .col-d,
+    .col-e,
+    .col-f {
         width: 320px;
     }
 }
-
 /* -----------------------------------------------------------------------------
     small
 ----------------------------------------------------------------------------- */
@@ -78,16 +146,26 @@
     }
     
     .col-abcdef,
-    .col-abcd, .col-cdef,
-    .col-abc, .col-def,
-    .col-ab, .col-cd, .col-ef {
-        width: 470px;
-    }
-    
-    .slim .col-abcdef,
-    .slim .col-abcd, .slim .col-cdef,
-    .slim .col-abc, .slim .col-def,
-    .slim .col-ab, .slim .col-cd, .slim .col-ef {
+    .col-abcde,
+    .col-bcdef,
+    .col-abcd,
+    .col-bcde,
+    .col-cdef,
+    .col-abc,
+    .col-bcd,
+    .col-cde,
+    .col-def,
+    .col-ab,
+    .col-bc,
+    .col-cd,
+    .col-de,
+    .col-ef,
+    .col-a,
+    .col-b,
+    .col-c,
+    .col-d,
+    .col-e,
+    .col-f {
         width: 480px;
     }
 }
@@ -95,36 +173,43 @@
 /* -----------------------------------------------------------------------------
     medium
 ----------------------------------------------------------------------------- */
-@media all and (min-width: 640px) and (max-width: 959px) {
-        .grid,
+@media all and (min-width: 640px) and (max-width: 989px) {
+	.grid,
     .row {
         width: 640px;
     }
 
     .col-abcdef {
-        width: 630px;
-    }
-    
-    .slim .col-abcdef {
         width: 640px;
     }
-
-    .col-abcd, .col-cdef,
-    .col-abc, .col-def,
-    .col-ab, .col-cd, .col-ef {
-        width: 310px;
-    }
     
-    .slim .col-abcd, .slim .col-cdef,
-    .slim .col-abc, .slim .col-def,
-    .slim .col-ab, .slim .col-cd, .slim .col-ef {
+    .col-abcde,
+    .col-bcdef,
+    .col-abcd,
+    .col-bcde,
+    .col-cdef,
+    .col-abc,
+    .col-bcd,
+    .col-cde,
+    .col-def,
+    .col-ab,
+    .col-bc,
+    .col-cd,
+    .col-de,
+    .col-ef,
+    .col-a,
+    .col-b,
+    .col-c,
+    .col-d,
+    .col-e,
+    .col-f {
         width: 320px;
     }
 }
 
 /* -----------------------------------------------------------------------------
-        large
+	large
 ----------------------------------------------------------------------------- */
-@media all and (min-width: 960px) {
+@media all and (min-width: 990px) {
     
 }
