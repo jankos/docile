@@ -11,12 +11,13 @@
                     </div>
                     
                     <p class="postmetadata">Posted in <?php the_category(', '); ?></p>
-                    </div>
-                    <?php endwhile; else: ?>
+                <?php endwhile; else: ?>
                     <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-                    <?php endif; ?>
+                <?php endif; ?>
                 </div>
-                <?php  ?>
+                <div class="cell" id="comments">
+                    
+                </div>
             </div>
             <div class="col col-ef">
                 <div class="cell" id="sidebar">

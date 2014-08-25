@@ -5,62 +5,64 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    background: #eee;
-    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background: #ffffff;
+    color: #424242;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Condensed', sans-serif;
-    margin: 5px 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 0.5em 0;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 2em;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 1.75em;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 1.5em;
 }
 
 h4 {
-    font-size: 16px;
+    font-size: 1.25em;
 }
 
 h5 {
-    font-size: 14px;
+    font-size: 1em;
 }
 
 h6 {
-    font-size: 12px;
+    font-size: 0.875em;
 }
 
 p {
-    margin: 5px 0;
+    margin: 0.5em 0;
 }
 
 a {
-    color: #369;
+    color: #FF9900;
 }
 
 .grid {
+	margin: 1em auto;
     background: #fff;
 }
 
 #header {
-    background: #666;
-    color: #eee;
+    background: #424242;
+    color: #E9E9E9;
     margin: 0;
+	padding: 0.5em;
 }
 
 #header h1 {
     margin: 0;
-    padding: 10px 10px 0 10px;
+    padding: 0 0.5em;
 }
 
 #header p {
@@ -68,7 +70,39 @@ a {
     padding: 0 10px 10px 10px;
 }
 
+#mainmenu {
+	margin: 0;
+}
+
+#mainmenu ul {
+	background: #FF9900;
+	display: table;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style-type: none;
+}
+
+#mainmenu li {
+	display: table-cell;
+}
+
+#mainmenu a {
+	color: #424242;
+	display: block;
+	padding: 0.5em;
+	text-decoration: none;
+	text-align: center;
+}
+
+#mainmenu a:hover {
+	background: #E9E9E9;
+}
+
 #copyright {
-    border-top: 1px dotted #999;
-    font-size: 12px;
+	margin: 0;
+	padding: 1em;
+    font-size: 0.875em;
+	background: #BCBCBC;
+	color: #424242;
 }
