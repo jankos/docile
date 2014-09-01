@@ -1,28 +1,55 @@
-        <div class="row row-abcd-ef">
-            <div class="col col-abcd">
-                <div class="cell" id="article">
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+<div id="page">
 
-                    <small><?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></small>
-                    
-                    <div class="entry">
-                    <?php the_content(); ?>
-                    </div>
-                    
-                    <p class="postmetadata">Posted in <?php the_category(', '); ?></p>
-                <?php endwhile; else: ?>
-                    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-                <?php endif; ?>
-                </div>
-                <div class="cell" id="comments">
-                    
-                </div>
-            </div>
-            <div class="col col-ef">
-                <div class="cell" id="sidebar">
-                    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Widgets') ) : ?>
-                    <?php endif; ?>
-                </div>
+    <div class="column span-10 first" id="maincontent">
+
+        <div class="content">
+
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+            <div class="alignleft"><?php previous_post_link('&laquo; %link') ?></div>
+            <div class="alignright"><?php next_post_link('%link &raquo;') ?></div>
+        </div>
+
+        <div class="post" id="post-<?php the_ID(); ?>">
+            <h2><a href="<?php echo get_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+            <p class="small">
+                <?php the_time('F jS, Y') ?> &nbsp;|&nbsp;
+                <!-- by <?php the_author() ?> -->
+                Published in
+                <?php
+
+    the_category(', ');
+
+if($post->comment_count > 0) {
+    echo ' &nbsp;|&nbsp; ';
+    if($post->comment_count > 1) {
+        echo '<a href="#comments">' . $post->comment_count . ' Comments</a>';
+    } else {
+        echo '<a href="#comments">1 Comment</a>';
+    }
+}
+
+edit_post_link('Edit', ' &nbsp;|&nbsp; ', '');
+
+?>
+            </p>
+
+            <div class="entry">
+                <?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
+
+                <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+
+
             </div>
         </div>
+
+        <?php comments_template(); ?>
+
+        <?php endwhile; else: ?>
+
+        <p>Sorry, no posts matched your criteria.</p>
+
+        <?php endif; ?>
+
+    </div>
+</div>
