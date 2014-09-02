@@ -1,13 +1,10 @@
 <?php
 if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
     die ('Please do not load this page directly. Thanks!');
-
 if (!empty($post->post_password)) {
     if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {
 ?>
-
 <p class="nocomments">This post is password protected. Enter the password to view comments.</p>
-
 <?php
         return;
     }
@@ -22,39 +19,28 @@ if (!empty($post->post_password)) {
     <?php if ('open' == $post-> ping_status) { ?><span class="trackbacklink"><a href="<?php trackback_url() ?>" title="Copy this URI to trackback this entry.">Trackback Address</a></span><?php } ?>
 </div>
 
-<ol class="comments">
+<div class="comments">
 
     <?php foreach ($comments as $comment) : ?>
 
-    <li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
+    <div <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
         <cite><?php comment_author_link() ?></cite> says:
         <?php if ($comment->comment_approved == '0') : ?>
         <em>Your comment is awaiting moderation.</em>
         <?php endif; ?>
         <br />
-
-        <p class="small"><?php comment_date('F jS, Y') ?> at <?php comment_time() ?> (<a href="#comment-<?php comment_ID() ?>" title="">#</a>) <?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?></p>
-
+        <p><?php the_time(get_option('date_format')) ?>&nbsp;@&nbsp;<?php the_time(get_option('time_format')) ?> (<a href="#comment-<?php comment_ID() ?>" title="">#</a>) <?php edit_comment_link('Edit','[ ',' ]'); ?></p>
         <?php comment_text() ?>
-
-    </li>
-
+    </div>
     <?php endforeach; ?>
-
-</ol>
-
+</div>
 
 <?php else : ?>
-
 <?php if ('open' == $post->comment_status) : ?>
-
 <?php else : ?>
 <p class="nocomments">Comments are closed.</p>
-
 <?php endif; ?>
 <?php endif; ?>
-
-
 <?php if ('open' == $post->comment_status) : ?>
 
 <h2 id="respond">Leave a Response</h2>
@@ -64,7 +50,6 @@ if (!empty($post->post_password)) {
 <?php else : ?>
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-
     <?php if ( $user_ID ) : ?>
 
     <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a></p>
@@ -90,9 +75,6 @@ if (!empty($post->post_password)) {
         <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
     </p>
     <?php do_action('comment_form', $post->ID); ?>
-
 </form>
-
 <?php endif; ?>
-
 <?php endif; ?>

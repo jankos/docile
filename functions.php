@@ -1,6 +1,6 @@
 <?php
 function getPost($post = NULL) {
-	include('post.php');
+	include('templates/post.php');
 }
 /* =============================================================================
     Custom Menus

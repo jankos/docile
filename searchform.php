@@ -1,10 +1,4 @@
-<?php if (!is_search()) {
-
-    $search_text = "Search";
-
-} else { $search_text = "$s"; }
-?>
-
+<?php if (!is_search()) { $search_text = '';} else { $search_text = "$s"; } ?>
 <div id="search">
     <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
         <div>

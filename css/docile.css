@@ -46,6 +46,11 @@ p {
 
 a {
     color: #FF9900;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .grid {

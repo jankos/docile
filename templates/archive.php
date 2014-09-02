@@ -21,10 +21,9 @@
 
 <?php endif; ?>
 
-
-<div class="navigation">
-    <div class="left"><?php next_posts_link('&laquo; Previous Entries') ?></div>
-    <div class="right"><?php previous_posts_link('Next Entries &raquo;') ?></div>
+<div>
+    <span class="previous"><?php next_posts_link('&laquo; Previous') ?></span>
+    <span class="next"><?php previous_posts_link('Next &raquo;') ?></span>
 </div>
 
 <?php while (have_posts()) : the_post(); ?>
@@ -33,14 +32,14 @@
 
 <?php endwhile; ?>
 
-<div class="navigation">
-    <div class="left"><?php next_posts_link('&laquo; Previous Entries') ?></div>
-    <div class="right"><?php previous_posts_link('Next Entries &raquo;') ?></div>
+<div>
+    <span class="previous"><?php next_posts_link('&laquo; Previous') ?></span>
+    <span class="next"><?php previous_posts_link('Next &raquo;') ?></span>
 </div>
 
 <?php else : ?>
 
-<h2>Not Found</h2>
+<h1>Not Found</h1>
 
 <?php include (TEMPLATEPATH . '/searchform.php'); ?>
 
