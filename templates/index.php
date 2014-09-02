@@ -1,23 +1,18 @@
-<div class="column span-10 last" id="maincontent">
-    <div class="content">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="post-single">
-            <div class="post-title"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
-                <span class="post-time"><?php the_time('F j, Y'); ?></span>
-                <?php if(get_the_author() != "adam"): ?>, by <span class="post-author"><?php the_author_posts_link() ?></span><?php endif; ?>
-                </span>
-        </div>
-    </div>
-    <?php endwhile; else: ?>
-    <div class="no-results">
-        <p><strong>There has been an error.</strong></p>
-        <p>We apologize for any inconvenience, please <a href="<?php bloginfo('url'); ?>/" title="<?php bloginfo('description'); ?>">return to the home page</a> or use the search form below.</p>
-        <?php get_search_form(); ?>
-    </div>
-    <?php endif; ?>
+<?php if (have_posts()): ?>
+<?php while (have_posts()): ?>
+<?php the_post(); ?>
+<div>
+    <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 
-    <div class="left"><?php next_posts_link('&laquo; Previous Entries') ?></div>
-    <div class="right"><?php previous_posts_link('Next Entries &raquo;') ?></div>
+    <div>
+        <?php the_content(); ?>
+    </div>
 
+    <div><?php the_time(get_option('date_format')) ?> @ <?php the_time(get_option('time_format')) ?> by <?php the_author_posts_link() ?> in <?php the_category(', '); ?></div>
 </div>
-</div>
+<?php endwhile; ?>
+<?php else: ?>
+<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>
+<div class="left"><?php next_posts_link('&laquo; Previous Entries') ?></div>
+<div class="right"><?php previous_posts_link('Next Entries &raquo;') ?></div>
