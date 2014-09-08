@@ -27,7 +27,7 @@
     <?php the_content(); ?>
 </div>
 
-<?php comments_template( 'templates/comments.php' ); ?>
+<?php comments_template( '/templates/comments.php' ); ?>
 
 <?php endwhile; else: ?>
 
