@@ -4,7 +4,7 @@ if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 if (!empty($post->post_password)) {
     if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {
 ?>
-<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+<p>This post is password protected. Enter the password to view comments.</p>
 <?php
         return;
     }
@@ -14,24 +14,23 @@ if (!empty($post->post_password)) {
 <?php if ($comments) : ?>
 <h2 id="comments"><?php comments_number('No Comments', 'Comments', 'Comments' );?></h2>
 
-<div class="small">
+<p>
     <span class="feedlink"><?php post_comments_feed_link('Feed'); ?></span>
     <?php if ('open' == $post-> ping_status) { ?><span class="trackbacklink"><a href="<?php trackback_url() ?>" title="Copy this URI to trackback this entry.">Trackback Address</a></span><?php } ?>
-</div>
+</p>
 
 <div class="comments">
-
     <?php foreach ($comments as $comment) : ?>
 
     <div id="comment-<?php comment_ID() ?>">
-        <cite><?php comment_author_link() ?></cite> says:
+        <i class="fa fa-user"></i> <?php comment_author_link() ?>
+        <i class="fa fa-calendar"></i> <?php the_time(get_option('date_format')) ?>&nbsp;<i class="fa fa-clock-o"></i>&nbsp;<?php the_time(get_option('time_format')) ?> <a href="#comment-<?php comment_ID() ?>" title=""><i class="fa fa-link"></i></a> <?php edit_comment_link('<i class="fa fa-border fa-pencil-square-o"></i>','',''); ?></p>
         <?php if ($comment->comment_approved == '0') : ?>
-        <em>Your comment is awaiting moderation.</em>
+        <p><em>Your comment is awaiting moderation.</em></p>
         <?php endif; ?>
-        <br />
-        <p><?php the_time(get_option('date_format')) ?>&nbsp;@&nbsp;<?php the_time(get_option('time_format')) ?> (<a href="#comment-<?php comment_ID() ?>" title="">#</a>) <?php edit_comment_link('Edit','[ ',' ]'); ?></p>
         <?php comment_text() ?>
     </div>
+
     <?php endforeach; ?>
 </div>
 
@@ -56,24 +55,24 @@ if (!empty($post->post_password)) {
 
     <?php else : ?>
 
-    <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-        <label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
+    <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" tabindex="1" />
+    <label for="author">Name <?php if ($req) echo "(required)"; ?></label>
 
-    <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-        <label for="email"><small>Email (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
+    <input type="email" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" />
+    <label for="email">Email (will not be published) <?php if ($req) echo "(required)"; ?></label>
 
-    <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-        <label for="url"><small>Website</small></label></p>
+    <input type="url" name="url" id="url" value="<?php echo $comment_author_url; ?>" tabindex="3" />
+    <label for="url">Website</label>
 
     <?php endif; ?>
 
     <!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
 
-    <p><textarea name="comment" id="comment" cols="50" rows="20" tabindex="4"></textarea></p>
+    <textarea name="comment" id="comment" tabindex="4"></textarea>
 
-    <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-        <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-    </p>
+    <button name="submit" type="submit" id="submit" tabindex="5">Submit Comment</button>
+    <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
+
     <?php do_action('comment_form', $post->ID); ?>
 </form>
 <?php endif; ?>

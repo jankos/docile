@@ -4,4 +4,4 @@
     <?php the_content(); ?>
 </div>
 <?php endwhile; endif; ?>
-<?php edit_post_link('Edit', '[ ', ' ]'); ?>
+<?php edit_post_link('<i class="fa fa-border fa-pencil-square-o"></i>', '', ''); ?>
