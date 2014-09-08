@@ -2,22 +2,22 @@
 
 <?php $post = $posts[0]; ?>
 <?php if (is_category()): ?>
-<h2 class="pagetitle"><?php single_cat_title(); ?></h2>
+<h1 class="pagetitle"><?php single_cat_title(); ?></h1>
 
 <?php elseif (is_day()): ?>
-<h2 class="pagetitle">Archive for <?php the_time('F jS, Y'); ?></h2>
+<h1 class="pagetitle">Archive for <?php the_time('F jS, Y'); ?></h1>
 
 <?php elseif (is_month()): ?>
-<h2 class="pagetitle">Archive for <?php the_time('F, Y'); ?></h2>
+<h1 class="pagetitle">Archive for <?php the_time('F, Y'); ?></h1>
 
 <?php elseif (is_year()): ?>
-<h2 class="pagetitle">Archive for <?php the_time('Y'); ?></h2>
+<h1 class="pagetitle">Archive for <?php the_time('Y'); ?></h1>
 
 <?php elseif (is_author()): ?>
-<h2 class="pagetitle">Author Archive</h2>
+<h1 class="pagetitle">Author Archive</h1>
 
 <?php elseif (isset($_GET['paged']) && !empty($_GET['paged'])): ?>
-<h2 class="pagetitle">Blog Archives</h2>
+<h1 class="pagetitle">Blog Archives</h1>
 
 <?php endif; ?>
 
@@ -28,7 +28,7 @@
 
 <?php while (have_posts()) : the_post(); ?>
 
-<?php getPost(); ?>
+<?php get_template_part( '/templates/post' ); ?>
 
 <?php endwhile; ?>
 

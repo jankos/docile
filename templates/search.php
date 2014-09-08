@@ -11,7 +11,7 @@
 
 <?php while (have_posts()) : the_post(); ?>
 
-<?php getPost(); ?>
+<?php get_template_part( '/templates/post' ); ?>
 
 <?php endwhile; ?>
 
@@ -23,7 +23,6 @@
 <?php else : ?>
 
 <h2 class="center">No posts found. Try a different search?</h2>
-<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 
 <?php endif; ?>
 

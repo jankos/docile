@@ -4,16 +4,20 @@
           box-sizing: border-box;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    background: #ffffff;
-    color: #424242;
+    background: #fff;
+    color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans Condensed', sans-serif;
-    margin: 0.5em 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 10px 0;
 }
 
 h1 {
@@ -41,11 +45,11 @@ h6 {
 }
 
 p {
-    margin: 0.5em 0;
+    margin: 10px 0;
 }
 
 a {
-    color: #FF9900;
+    color: #369;
     text-decoration: none;
 }
 
@@ -54,20 +58,18 @@ a:hover {
 }
 
 .grid {
-	margin: 1em auto;
+	margin: 0 auto;
     background: #fff;
 }
 
 #header {
-    background: #424242;
-    color: #E9E9E9;
     margin: 0;
-	padding: 0.5em;
+	padding: 10px;
 }
 
 #header h1 {
     margin: 0;
-    padding: 0 0.5em;
+    padding: 0 10px;
 }
 
 #header p {
@@ -75,12 +77,24 @@ a:hover {
     padding: 0 10px 10px 10px;
 }
 
+#search form {
+    text-align: right;
+}
+
+#search input {
+    margin: 10px 0;
+    padding: 5px;
+    width: 140px;
+    border: 1px solid #ccc;
+}
+
 #mainmenu {
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
 	margin: 0;
 }
 
 #mainmenu ul {
-	background: #FF9900;
 	display: table;
 	margin: 0;
 	padding: 0;
@@ -93,21 +107,54 @@ a:hover {
 }
 
 #mainmenu a {
-	color: #424242;
+	color: #369;
 	display: block;
-	padding: 0.5em;
+	padding: 10px;
 	text-decoration: none;
 	text-align: center;
 }
 
 #mainmenu a:hover {
-	background: #E9E9E9;
+	background: #eee;
+}
+
+#mainmenu .current-menu-item {
+    background: #eee;
+}
+
+#commentform label {
+    display: inline-block;
+    color: #999;
+}
+
+#commentform input {
+    display: inline-block;
+    margin: 10px 0;
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+#commentform textarea {
+    display: block;
+    width: 95%;
+    height: 10em;
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+#commentform button {
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #999;
+    padding: 10px;
+    color: #333;
+    background: #ccc;
 }
 
 #copyright {
+    border-top: 1px dotted #ccc;
 	margin: 0;
-	padding: 1em;
+	padding: 10px;
     font-size: 0.875em;
-	background: #BCBCBC;
-	color: #424242;
 }

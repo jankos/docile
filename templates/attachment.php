@@ -1,6 +1,4 @@
-<?php if ( have_posts() ): ?>
-<?php while ( have_posts() ): ?>
-<?php the_post(); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <?php $attachment_link = get_the_attachment_link($post->ID, true, array(450, 800)); ?>
 <?php $_post = &get_post($post->ID); $classname = ($_post->iconsize[0] <= 128 ? 'small' : '') . 'attachment'; ?>
@@ -28,10 +26,9 @@
 
     </div>
 
-<?php comments_template( 'templates/comments.php' ); ?>
+<?php comments_template( '/templates/comments.php' ); ?>
 
-<?php endwhile; ?>
-<?php else: ?>
+<?php endwhile; else: ?>
 
 <p>Sorry, no attachments matched your criteria.</p>
 
