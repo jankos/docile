@@ -12,10 +12,10 @@ if (!empty($post->post_password)) {
 ?>
 
 <?php if ($comments) : ?>
-<h2 id="comments"><?php comments_number('No Responses', 'Responses', 'Responses' );?></h2>
+<h2 id="comments"><?php comments_number('No Comments', 'Comments', 'Comments' );?></h2>
 
 <div class="small">
-    <span class="feedlink"><?php comments_rss_link('Feed'); ?></span>
+    <span class="feedlink"><?php post_comments_feed_link('Feed'); ?></span>
     <?php if ('open' == $post-> ping_status) { ?><span class="trackbacklink"><a href="<?php trackback_url() ?>" title="Copy this URI to trackback this entry.">Trackback Address</a></span><?php } ?>
 </div>
 
@@ -23,7 +23,7 @@ if (!empty($post->post_password)) {
 
     <?php foreach ($comments as $comment) : ?>
 
-    <div <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
+    <div id="comment-<?php comment_ID() ?>">
         <cite><?php comment_author_link() ?></cite> says:
         <?php if ($comment->comment_approved == '0') : ?>
         <em>Your comment is awaiting moderation.</em>
@@ -43,7 +43,7 @@ if (!empty($post->post_password)) {
 <?php endif; ?>
 <?php if ('open' == $post->comment_status) : ?>
 
-<h2 id="respond">Leave a Response</h2>
+<h2 id="respond">Leave a Comment</h2>
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">logged in</a> to post a comment.</p>
