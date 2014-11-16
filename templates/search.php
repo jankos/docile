@@ -3,7 +3,7 @@
 <h1 class="pagetitle">Search Results for "<?php echo $s ?>"</h1>
 
 <div>
-    <span class="previous"><?php next_posts_link('&laquo; Previous') ?></span>
+    <span class="prev"><?php next_posts_link('&laquo; Previous') ?></span>
     <span class="next"><?php previous_posts_link('Next &raquo;') ?></span>
 </div>
 
@@ -16,7 +16,7 @@
 <?php endwhile; ?>
 
 <div>
-    <span class="previous"><?php next_posts_link('&laquo; Previous') ?></span>
+    <span class="prev"><?php next_posts_link('&laquo; Previous') ?></span>
     <span class="next"><?php previous_posts_link('Next &raquo;') ?></span>
 </div>
 
@@ -25,5 +25,3 @@
 <h2 class="center">No posts found. Try a different search?</h2>
 
 <?php endif; ?>
-
-

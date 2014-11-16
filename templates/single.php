@@ -1,7 +1,7 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <div>
-    <span class="previous"><?php previous_post_link('&laquo; %link') ?></span>
+    <span class="prev"><?php previous_post_link('&laquo; %link') ?></span>
     <span class="next"><?php next_post_link('%link &raquo;') ?></span>
 </div>
 

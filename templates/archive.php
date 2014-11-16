@@ -22,7 +22,7 @@
 <?php endif; ?>
 
 <div>
-    <span class="previous"><?php next_posts_link('&laquo; Previous') ?></span>
+    <span class="prev"><?php next_posts_link('&laquo; Previous') ?></span>
     <span class="next"><?php previous_posts_link('Next &raquo;') ?></span>
 </div>
 
@@ -33,7 +33,7 @@
 <?php endwhile; ?>
 
 <div>
-    <span class="previous"><?php next_posts_link('&laquo; Previous') ?></span>
+    <span class="prev"><?php next_posts_link('&laquo; Previous') ?></span>
     <span class="next"><?php previous_posts_link('Next &raquo;') ?></span>
 </div>
 

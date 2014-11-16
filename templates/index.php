@@ -7,6 +7,6 @@
 <?php endif; ?>
 
 <div>
-    <span class="previous"><?php next_posts_link('&laquo; Previous Entries') ?></span>
+    <span class="prev"><?php next_posts_link('&laquo; Previous Entries') ?></span>
     <span class="next"><?php previous_posts_link('Next Entries &raquo;') ?></span>
 </div>
