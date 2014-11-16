@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="row row-abcd-ef">
     <div class="col col-abcd">
-        <div class="cell" id="content">
+        <div class="cell content">
         <?php
         if ( is_front_page() && is_home() ) {
             get_template_part( 'templates/index' );
@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="col col-ef">
-        <div class="cell" id="sidebar">
+        <div class="cell sidebar">
             <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar Widgets') ) : ?>
             <?php endif; ?>
         </div>

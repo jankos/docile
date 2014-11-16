@@ -1,4 +1,25 @@
 <?php
+//http://codex.wordpress.org/Theme_Customization_API
+/* =============================================================================
+    Styles / Scripts
+============================================================================= */
+/* -----------------------------------------------------------------------------
+    Styles
+----------------------------------------------------------------------------- */
+function docile_styles_scripts() {
+    wp_enqueue_style( 'docile-roboto', '//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Roboto+Condensed:400italic,700italic,400,700&subset=latin,latin-ext,cyrillic,cyrillic-ext', array(), '0.0.1', 'all' );
+    wp_enqueue_style( 'docile-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), '0.0.1', 'all' );
+    wp_enqueue_style( 'docile-normalize', get_template_directory_uri() . '/css/normalize.css', array(), '0.0.1', 'all' );
+    wp_enqueue_style( 'docile-grido', get_template_directory_uri() . '/css/grido.css', array(), '0.0.1', 'all' );
+    wp_enqueue_style( 'docile-main', get_template_directory_uri() . '/css/docile.css', array(), '0.0.1', 'all' );
+    wp_enqueue_style( 'docile-style', get_template_directory_uri() . '/css/style.css', array(), '0.0.1', 'all' );
+    
+    wp_enqueue_script( 'docile-script', get_template_directory_uri() . '/js/script.js', array(), '0.0.1', true );
+}
+/* -----------------------------------------------------------------------------
+    Activate
+----------------------------------------------------------------------------- */
+add_action( 'wp_enqueue_scripts', 'docile_styles_scripts' );
 /* =============================================================================
     Custom Menus
 ============================================================================= */
