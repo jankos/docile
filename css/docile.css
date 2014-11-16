@@ -62,39 +62,39 @@ a:hover {
     background: #fff;
 }
 
-#header {
+.header {
     margin: 0;
 	padding: 10px;
 }
 
-#header h1 {
+.header h1 {
     margin: 0;
     padding: 0 10px;
 }
 
-#header p {
+.header p {
     margin: 0;
     padding: 0 10px 10px 10px;
 }
 
-#search form {
+.search form {
     text-align: right;
 }
 
-#search input {
+.search input {
     margin: 10px 0;
     padding: 5px;
     width: 140px;
     border: 1px solid #ccc;
 }
 
-#mainmenu {
+.mainmenu {
     border-top: 1px dotted #ccc;
     border-bottom: 1px dotted #ccc;
 	margin: 0;
 }
 
-#mainmenu ul {
+.mainmenu ul {
 	display: table;
 	margin: 0;
 	padding: 0;
@@ -102,11 +102,11 @@ a:hover {
 	list-style-type: none;
 }
 
-#mainmenu li {
+.mainmenu li {
 	display: table-cell;
 }
 
-#mainmenu a {
+.mainmenu a {
 	color: #369;
 	display: block;
 	padding: 10px;
@@ -114,20 +114,20 @@ a:hover {
 	text-align: center;
 }
 
-#mainmenu a:hover {
+.mainmenu a:hover {
 	background: #eee;
 }
 
-#mainmenu .current-menu-item {
+.mainmenu .current-menu-item {
     background: #eee;
 }
 
-#commentform label {
+.commentform label {
     display: inline-block;
     color: #999;
 }
 
-#commentform input {
+.commentform input {
     display: inline-block;
     margin: 10px 0;
     width: 50%;
@@ -135,24 +135,25 @@ a:hover {
     border: 1px solid #999;
 }
 
-#commentform textarea {
+.commentform textarea {
     display: block;
     width: 95%;
     height: 10em;
+    margin: 10px 0;
     padding: 5px;
     border: 1px solid #999;
 }
 
-#commentform button {
+.commentform button {
     display: block;
     margin: 10px 0;
-    border: 1px solid #999;
+    border: 1px solid #eee;
     padding: 10px;
-    color: #333;
-    background: #ccc;
+    color: #fff;
+    background: #369;
 }
 
-#copyright {
+.copyright {
     border-top: 1px dotted #ccc;
 	margin: 0;
 	padding: 10px;

@@ -20,7 +20,7 @@
         </div>
         <div class="row row-abcdef">
             <div class="col col-abcdef">
-                <div class="cell" id="copyright">
+                <div class="cell copyright">
                     &copy; 2014 jankos
                 </div>
             </div>
