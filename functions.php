@@ -83,4 +83,44 @@ if (function_exists('register_sidebar')) {
 	    )
 	);
 }
+/* =============================================================================
+    Theme support
+============================================================================= */
+/* -----------------------------------------------------------------------------
+    post thumbnails
+----------------------------------------------------------------------------- */
+
+add_theme_support( 'post-thumbnails' );
+/* -----------------------------------------------------------------------------
+    custom header
+----------------------------------------------------------------------------- */
+$defaults = array(
+    'default-image'          => get_template_directory_uri() . '/img/header.jpg',
+    'width'                  => 990,
+    'height'                 => 150,
+    'flex-height'            => false,
+    'flex-width'             => false,
+    'uploads'                => true,
+    'random-default'         => false,
+    'header-text'            => true,
+    'default-text-color'     => '7A6A53',
+    'wp-head-callback'       => '',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header', $defaults );
+/* -----------------------------------------------------------------------------
+    custom background
+----------------------------------------------------------------------------- */
+$defaults = array(
+    'default-color'          => '#D5DED9',
+    'default-image'          => get_template_directory_uri() . '/img/background.jpg',
+    'default-repeat'         => 'no-repeat',
+    'default-position-x'     => '',
+    'default-attachment'     => 'fixed',
+    'wp-head-callback'       => '_custom_background_cb',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => ''
+);
+add_theme_support( 'custom-background', $defaults );
 ?>

@@ -6,6 +6,9 @@
     margin: 0 auto;
     clear: both;
     overflow: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 /* -----------------------------------------------------------------------------
     rows
@@ -13,6 +16,9 @@
 .row {
     clear: both;
     overflow: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .row-abcdef {}
@@ -53,6 +59,9 @@
     padding: 0;
     overflow: auto;
     float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .col-abcdef {
@@ -98,7 +107,10 @@
 ----------------------------------------------------------------------------- */
 .cell {
     padding: 0;
-    margin: 5px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 /* =============================================================================
     Media Queries
@@ -169,7 +181,6 @@
         width: 480px;
     }
 }
-
 /* -----------------------------------------------------------------------------
     medium
 ----------------------------------------------------------------------------- */
@@ -206,7 +217,6 @@
         width: 320px;
     }
 }
-
 /* -----------------------------------------------------------------------------
 	large
 ----------------------------------------------------------------------------- */
