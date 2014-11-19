@@ -9,16 +9,13 @@
 </head>
 <body <?php body_class(); ?>>
     <div class="grid">
-        <div class="row row-abcde-f">
-            <div class="col col-abcde">
+        <div class="row row-abcdef">
+            <div class="col col-abcdef">
                 <div class="cell header">
+                    <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
                     <h1><a href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
                     <p><?php bloginfo( 'description' ); ?></p>
-                </div>
-            </div>
-            <div class="col col-f">
-                <div class="cell search">
-                    <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+                    <form method="get" class="searchform" id="searchform" action="<?php bloginfo('url'); ?>/">
                         <input type="search" name="s" id="s" placeholder="search" />
                     </form>
                 </div>
